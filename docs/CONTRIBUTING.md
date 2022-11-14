@@ -1,0 +1,143 @@
+<div id="título" align="center">
+    <img width="400px" alt="Braz - Gerador & Validador" src="https://raw.githubusercontent.com/dev-macb/braz/master/.github/assets/images/logo-nome.png"/>
+</div>
+
+
+---
+
+
+<details>
+    <summary>📌 Informações do Projeto</summary>
+    <div id="metadados" align="center">
+        <a href="#">
+            <img alt="Contribuintes" src="https://img.shields.io/github/contributors/dev-macb/braz?color=blue&label=Contributors">
+        </a>
+        <br />
+        <a href="#">
+            <img alt="GitHub Forks" src="https://img.shields.io/github/forks/dev-macb/braz?color=blue&label=Forks">
+        </a>
+        <a href="#">
+            <img alt="GitHub Issues" src="https://img.shields.io/github/issues/dev-macb/braz?color=blue&label=Issues">
+        </a>
+        <a href="#">
+            <img alt="GitHub Pull Requests" src="https://img.shields.io/github/issues-pr/dev-macb/braz?color=blue&label=Pull%20Requests">
+        </a>
+        <a href="#">
+            <img alt="Licença do Projeto" src="https://img.shields.io/github/license/dev-macb/braz?color=blue&label=License">
+        </a>
+        <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/dev-macb/braz?color=blue&label=Tamanho">
+</details>
+
+
+<details>
+    <summary>📌 Índice</summary>
+    <ul id="lista-índice" align="left">
+        <li><a href="#contribuições">Contribuições</a></li>
+        <li><a href="#código-conduta">Código de Conduta</a></li>
+        <li><a href="#eu-tenho-uma-pergunta">Tenho uma pergunta</a></li>
+        <li><a href="#funcionalidades">Quero Contribuir</a></li>
+            <ul id="sub-lista-índice" align="left">
+                <li><a href="#relatando-bugs">Relatando Bugs</a></li>
+                <li><a href="#sugerindo-melhorias">Sugerindo melhorias</a></li>
+                <li><a href="#outras-formas">Outras Formas</a></li>
+            </ul>
+        <li><a href="#guia-estilos">Guia de Estilos</a></li>
+        <li><a href="#agradecimentos">Agradecimentos</a></li>
+    </ul>
+</details>
+
+
+___
+
+
+<h2 id="contribuições" align="left">🏹 Contribuições</h2>
+<p id="txt-contribuições" align="left">
+    Em primeiro lugar, gostaria de agradecer por se interessar em contribuir com o nosso projeto! Todos os tipos de contribuições são incentivados e valorizados. Por favor, certifique-se de ler a seção <a href="#">Relevante</a> antes de fazer sua contribuição. Isso tornará muito mais fácil para nós, mantenedores, e suavizará a experiência de todos os envolvidos. A comunidade aguarda suas contribuições.
+</p>
+<h3 id="divisor" align="center">🔷</h3>
+
+
+<h2 id="código-conduta" align="left">🛡️ Código de Conduta</h2>
+<p id="txt-código-conduta" align="left">
+    Este projeto e todos os que nele participam são regidos pelo <a href="#">CODE_OF_CONDUCT</a>. Ao participar, espera-se que você mantenha compromisso à esse código. Por favor, denuncie comportamentos inaceitáveis.
+</p>
+<h3 id="divisor" align="center">🔷</h3>
+
+
+<h2 id="eu-tenho-uma-pergunta" align="left">🧩 Tenho uma pergunta</h2>
+<p id="txt-eu-tenho-uma-pergunta" align="left">
+    Se você deseja fazer uma pergunta, assumimos que você leu a <a href="#">documentação</a> disponível. Antes de fazer sua pergunta, consulte as <a href="#">Issues</a> existentes que possam ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, escreva sua pergunta nesta edição. Também é aconselhável pesquisar na internet respostas primeiro. Se você ainda sentir a necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
+    <ul id="lista-eu-tenho-uma-pergunta" align="left">
+        <li>Abra uma <a href="#">Issue</a>.</li>
+        <li>Forneça o máximo de contexto possível sobre o que está acontecendo.</li>
+        <li>Fornecer versões de projeto, plataforma e recursos utilizados.</li>
+    </ul>
+    Em seguida, cuidaremos do problema o mais rápido possível.
+</p>
+<h3 id="divisor" align="center">🔷</h3>
+
+
+<h2 id="objetivo" align="left">🪢 Quero Contribuir</h2>
+<p id="txt-contribuições" align="left">
+    A princípio, ao contribuir para este projeto, você deve concordar que foi o autor de 100% do conteúdo, que possui os direitos necessários ao conteúdo e que o conteúdo com o qual contribui pode ser fornecido sob a licença do projeto.
+</p>
+<h3 id="objetivo" align="left">🕷️ Relatando Bugs</h3>
+Um bom relatório de bug não deve deixar os outros precisando persegui-lo para obter mais informações. Portanto, pedimos que você investigue cuidadosamente, colete informações e descreva o problema em detalhes em seu relatório. Conclua as etapas a seguir com antecedência para nos ajudar a corrigir qualquer possível bug o mais rápido possível.
+
+- Certifique-se de estar usando a versão mais recente.
+- Determine se o seu bug é realmente um bug e não um erro do seu lado, por exemplo usando componentes/versões de ambiente incompatíveis (Certifique-se de ter lido a [documentação](). Se você estiver procurando por suporte, você pode querer verificar [esta seção](#i-have-a-question)).
+- Para ver se outros usuários experimentaram (e potencialmente já resolveram) o mesmo problema que você está tendo, verifique se já não existe um relatório de bug para o seu bug ou erro no [rastreador de bugs](issues?q=label%3Abug ).
+- Certifique-se também de pesquisar na Internet (incluindo o Stack Overflow) para ver se os usuários fora da comunidade do GitHub discutiram o problema.
+- Colete informações sobre o bug:
+- Rastreamento de pilha (Traceback)
+- SO, plataforma e versão (Windows, Linux, macOS, x86, ARM)
+- Versão do interpretador, compilador, SDK, ambiente de execução, gerenciador de pacotes, dependendo do que parecer relevante.
+- Possivelmente sua entrada e saída
+- Você pode reproduzir de forma confiável o problema? E você também pode reproduzi-lo com versões mais antigas?
+
+> Você nunca deve relatar problemas, vulnerabilidades ou bugs relacionados à segurança, incluindo informações confidenciais, ao rastreador de problemas ou a qualquer outro lugar público. Em vez disso, bugs sensíveis devem ser enviados por e-mail para <>.
+
+Usamos problemas do GitHub para rastrear bugs e erros. Se você tiver um problema com o projeto:
+
+- Abra um [Problema](/issues/new). (Como não podemos ter certeza neste momento se é um bug ou não, pedimos que você não fale sobre um bug ainda e não rotule o problema.)
+- Explique o comportamento que você esperaria e o comportamento real.
+- Forneça o máximo de contexto possível e descreva as *etapas de reprodução* que outra pessoa pode seguir para recriar o problema por conta própria. Isso geralmente inclui seu código. Para bons relatórios de bugs, você deve isolar o problema e criar um caso de teste reduzido.
+- Forneça as informações que você coletou na seção anterior.
+
+Uma vez arquivado:
+
+- A equipe do projeto rotulará o problema de acordo.
+- Um membro da equipe tentará reproduzir o problema com as etapas fornecidas. Se não houver etapas de reprodução ou nenhuma maneira óbvia de reproduzir o problema, a equipe solicitará essas etapas e marcará o problema como `necessita de reprodução`. Bugs com a tag `needs-repro` não serão resolvidos até que sejam reproduzidos.
+- Se a equipe conseguir reproduzir o problema, ele será marcado como `precisa de correção`, bem como possivelmente outras tags (como `crítico`), e o problema será deixado para ser [implementado por alguém](# sua-primeira-contribuição de código).
+
+<h3 id="objetivo" align="left">💡 Sugerindo melhorias</h3>
+Esta seção orienta você no envio de uma sugestão de aprimoramento para CONTRIBUTING.md, **incluindo recursos completamente novos e pequenas melhorias nas funcionalidades existentes**. Seguir essas diretrizes ajudará os mantenedores e a comunidade a entender sua sugestão e encontrar sugestões relacionadas.
+
+- Certifique-se de estar usando a versão mais recente.
+- Leia a [documentação]() com atenção e descubra se a funcionalidade já está coberta, talvez por uma configuração individual.
+- Faça uma [pesquisa](/problemas) para ver se o aprimoramento já foi sugerido. Se tiver, adicione um comentário ao problema existente em vez de abrir um novo.
+- Descubra se a sua ideia se encaixa no escopo e objetivos do projeto. Cabe a você fazer um argumento forte para convencer os desenvolvedores do projeto dos méritos desse recurso. Tenha em mente que queremos recursos que sejam úteis para a maioria de nossos usuários e não apenas para um pequeno subconjunto. Se você estiver segmentando apenas uma minoria de usuários, considere escrever uma biblioteca de complementos/plug-ins.
+
+As sugestões de aprimoramento são rastreadas como [problemas do GitHub](/issues).
+
+- Use um **título claro e descritivo** para o problema para identificar a sugestão.
+- Forneça uma **descrição passo a passo do aprimoramento sugerido** com o máximo de detalhes possível.
+- **Descreva o comportamento atual** e **explique qual comportamento você esperava ver** e por quê. Neste ponto, você também pode dizer quais alternativas não funcionam para você.
+- Você pode **incluir capturas de tela e GIFs animados** que ajudam a demonstrar as etapas ou apontar a parte à qual a sugestão está relacionada. Você pode usar [esta ferramenta](https://www.cockos.com/licecap/) para gravar GIFs no macOS e Windows, e [esta ferramenta](https://github.com/colinkeenan/silentcast) ou [este ferramenta](https://github.com/GNOME/byzanz) no Linux.
+- **Explique por que esse aprimoramento seria útil** para a maioria dos usuários do CONTRIBUTING.md. Você também pode indicar outros projetos que o resolveram melhor e que podem servir de inspiração.
+
+<h3 id="objetivo" align="left">❓ Outras Formas</h3>
+<p id="txt-código-conduta" align="left">
+    Gostou do projeto e ainda não consegue contribuir com ele? Considere deixar uma ⭐ para o projeto <strong>Braz</strong>. Comente com família, amigos e nas redes sociais sobre nossa ideia. Vamos espalhar nosso projeto
+</p>
+<h3 id="divisor" align="center">🔷</h3>
+
+
+<h2 id="código-conduta" align="left">💫 Guia de Estilos</h2>
+<p id="txt-código-conduta" align="left">
+    
+</p>
+<h3 id="divisor" align="center">🔷</h3>
+
+
+___
