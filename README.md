@@ -6,7 +6,7 @@
 ---
 
 
-<details open>
+<details>
     <summary>📌 Informações do Projeto</summary>
     <div id="metadados" align="center">
         <sup>Metadados</sup>
@@ -40,7 +40,7 @@
 </details>
 
 
-<details open>
+<details>
     <summary>📌 Índice</summary>
     <ul id="lista-índice" align="left">
         <li><a href="#objetivo">Objetivo</a></li>
@@ -136,6 +136,3 @@ $ pip install -r requirements.txt
 <p id="txt-licença" align="left">
     O braz utiliza a <strong>licença MIT</strong> em todo seu código, confira suas condições em <a href="https://github.com/dev-macb/braz/blob/main/LICENSE">MIT License</a>.
 </p>
-
-
----
