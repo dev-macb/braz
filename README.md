@@ -130,3 +130,4 @@ $ pip install -r requirements.txt
     O Braz utiliza a <strong>licença MIT</strong> em todo seu código, confira suas condições em <a href="https://github.com/dev-macb/braz/blob/dev/LICENSE.md">LICENSE</a>.
 </p>
 <p align="center">🔷</p>
+<!-- TESTE -->
