@@ -3,6 +3,9 @@
 </div>
 
 
+<h2 align="center">Código de Conduta do Convênio do Colaborador</h2>
+
+
 <details>
     <summary>📌 Índice</summary>
     <ul id="lista-índice">
@@ -16,9 +19,6 @@
 </details>
 
 ---
-
-<h2 align="center">Código de Conduta do Convênio do Colaborador</h2>
-
 
 <h2 id="nosso-compromisso">🎗️ Nosso Compromisso</h2>
 <p>
