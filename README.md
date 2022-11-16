@@ -3,7 +3,7 @@
 </div>
 
 
-<details>
+<details open>
     <summary>📌 Informações do Projeto</summary>
     <div id="metadados" align="center">
         <sup>Metadados</sup>
@@ -11,8 +11,8 @@
         <a href="https://pypi.org/project/braz/">
             <img alt="Versão no PyPI" src="https://img.shields.io/pypi/v/braz?label=PyPI&color=blue">
         </a>
-        <a href="https://pypi.org/project/braz/">
-            <img alt="Downloads no PyPI" src="https://img.shields.io/pypi/dm/braz?color=blue&label=Downloads">
+        <a href="https://pepy.tech/project/braz">
+            <img alt="Total de Downloads" src="https://static.pepy.tech/personalized-badge/braz?period=month&units=international_system&left_color=grey&right_color=blue&left_text=Downloads" />
         </a>
         <a href="https://github.com/dev-macb/braz/blob/main/LICENSE">
             <img alt="Licença do Projeto" src="https://img.shields.io/github/license/dev-macb/braz?color=blue&label=License">
@@ -96,7 +96,7 @@ $ pip install -r requirements.txt
         <li><code>braz.manipular</code> O módulo que contém as funções de manipulação de strings.</li>
     </ul>
     <blockquote>
-        Neste documento há apenas uma abresentação breve das funcionalidades do pacote. Para visualizar a documentação oficial com todas as funções e informações adicionais do módulo clique <a href="#">aqui</a>.
+        Neste documento há apenas uma abresentação breve das funcionalidades do pacote. Para visualizar a documentação oficial com todas as funções e informações adicionais do módulo clique <a href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">aqui</a>.
     </blockquote>
 </p>
 <p align="center">🔷</p>
@@ -113,7 +113,7 @@ $ pip install -r requirements.txt
 
 <h2 id="contribuições">✒️ Contribuições</h2>
 <p>
-    Toda contribuição será bem-vinda! Caso tenha encontrado algum bug, propor uma nova funcionalidade ou conversar sobre o projeto <a href="#">Abra uma Issue</a> e descreva seu caso. Se houver uma issue aberta e você deseja resolve-la, adicionar uma nova funcionalidade ou melhorar a documentação, desenvolva suas adições e me envie um <em>Pull Request</em>. Gostou do projeto e ainda não consegue contribuir com ele? Considere deixar uma ⭐ para o <strong>braz</strong>. Desde já agradeço pelo interesse em colaborar de alguma forma com o nosso projeto.
+    Toda contribuição será bem-vinda!🎉 Caso tenha encontrado algum bug, propor uma nova funcionalidade ou conversar sobre o projeto <a href="https://github.com/dev-macb/braz/issues">Abra uma Issue</a> e descreva seu caso. Se houver uma issue aberta e você deseja resolve-la, adicionar uma nova funcionalidade ou melhorar a documentação, desenvolva suas adições e me envie um <em>Pull Request</em>. Gostou do projeto e ainda não consegue contribuir com ele? Considere deixar uma ⭐ para o <strong>Braz</strong>. Desde já agradeço pelo interesse em colaborar de alguma forma com o nosso projeto. Para obter maiores informações sobre as contribuições do projeto, acesse o documento <a href="">CONTRIBUTING</a>.
 </p>
 <p align="center">🔷</p>
 
@@ -127,6 +127,6 @@ $ pip install -r requirements.txt
 
 <h2 id="licença">📄 Licença</h2>
 <p>
-    O Braz utiliza a <strong>licença MIT</strong> em todo seu código, confira suas condições em <a href="#">LICENSE</a>.
+    O Braz utiliza a <strong>licença MIT</strong> em todo seu código, confira suas condições em <a href="https://github.com/dev-macb/braz/blob/dev/LICENSE.md">LICENSE</a>.
 </p>
 <p align="center">🔷</p>

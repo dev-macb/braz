@@ -58,11 +58,11 @@
 <p align="center">🔷</p>
 
 
-<h2 id="eu-tenho-uma-pergunta">🧩 Tenho uma pergunta</h2>
+<h2 id="eu-tenho-uma-pergunta">🧩 Tenho Uma Pergunta</h2>
 <p>
-    Se você deseja fazer uma pergunta, assumimos que você leu a <a href="#">documentação</a> disponível. Antes de fazer sua pergunta, consulte as <a href="#">Issues</a> já existentes que possam ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, escreva sua pergunta nesta edição. Também é aconselhável pesquisar na internet respostas primeiro. Se você ainda sentir a necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
+    Se você deseja fazer uma pergunta, assumimos que você leu a <a href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">documentação</a> disponível. Antes de fazer sua pergunta, consulte as <a href="https://github.com/dev-macb/braz/issues">Issues</a> já existentes que possam ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, escreva sua pergunta nesta edição. Também é aconselhável pesquisar na internet respostas primeiro. Se você ainda sentir a necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
     <ul>
-        <li>Abra uma <a href="#">Issue</a>.</li>
+        <li>Abra uma <a href="https://github.com/dev-macb/braz/issues/new">Issue</a>.</li>
         <li>Forneça o máximo de contexto possível sobre o que está acontecendo.</li>
         <li>Fornecer versões de projeto, plataforma e recursos utilizados.</li>
     </ul>
