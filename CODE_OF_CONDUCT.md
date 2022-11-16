@@ -80,6 +80,6 @@
 
 <h2 id="atribuição">🏆 Atribuição</h2>
 <p>
-    Este Código de Conduta foi adaptado do <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">Contributor Covenant</a>, versão 1.4. Para obter respostas a perguntas comuns sobre este código de conduta, consulte  a <a href="https://www.contributor-covenant.org/faq">FAQ</a> do Contributor Covenant.
+    Este Código de Conduta foi adaptado do <a target="_blank" href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">Contributor Covenant</a>, versão 1.4. Para obter respostas a perguntas comuns sobre este código de conduta, consulte  a <a target="_blank" href="https://www.contributor-covenant.org/faq">FAQ</a> do Contributor Covenant.
 </p>
 <p align="center">🔷</p>

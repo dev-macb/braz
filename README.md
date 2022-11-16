@@ -3,7 +3,7 @@
 </div>
 
 
-<details open>
+<details>
     <summary>📌 Informações do Projeto</summary>
     <div id="metadados" align="center">
         <sup>Metadados</sup>
@@ -61,7 +61,7 @@
 
 <h2 id="instalação">🔧 Instalação</h2>
 <p>
-    Para instalar o pacote braz, certifique-se de que tenha <a href="https://www.python.org/downloads/">Python</a> e o gerenciador de pacotes <a href="https://pypi.org/project/pip/">pip</a> instalados em seu ambiente.
+    Para instalar o pacote braz, certifique-se de que tenha <a target="_blank" href="https://www.python.org/downloads/">Python</a> e o gerenciador de pacotes <a target="_blank" href="https://pypi.org/project/pip/">pip</a> instalados em seu ambiente.
     Instale executando o seguinde comando:
 </p>
 
@@ -69,7 +69,7 @@
 $ pip install braz
 ``` 
 <p>
-    Para clonar o projeto para sua máquina via <a href="https://git-scm.com/">git</a>, execute os comandos a seguir:
+    Para clonar o projeto para sua máquina via <a target="_blank" href="https://git-scm.com/">git</a>, execute os comandos a seguir:
 </p>
     
 ```bash
@@ -78,7 +78,7 @@ $ git clone https://github.com/dev-macb/braz
 $ pip install -r requirements.txt
 ``` 
 <p>
-    Caso deseja utilizar o braz como uma <strong>CLI</strong> nativa no seu terminal, baixe a <a href="#">última <em>release</em></a> do projeto e execute o arquivo <code>instalador_cli.py</code> para reazlizar a configuração e a instalação da <em>cli</em> em sua máquina. Para verificar se está funcionando corretamente execute os passos da demonstração abaixo. Caso não funcione corretamente acesse a <a href="#">documentação</a> do braz para mais informações.
+    Caso deseja utilizar o braz como uma <strong>CLI</strong> nativa no seu terminal, baixe a <a href="#">última <em>release</em></a> do projeto e execute o arquivo <code>instalador_cli.py</code> para reazlizar a configuração e a instalação da <em>cli</em> em sua máquina. Para verificar se está funcionando corretamente execute os passos da demonstração abaixo. Caso não funcione corretamente acesse a <a target="_blank" href="#">documentação</a> do braz para mais informações.
 </p>
 <p align="center">🔷</p>
 
@@ -96,7 +96,7 @@ $ pip install -r requirements.txt
         <li><code>braz.manipular</code> O módulo que contém as funções de manipulação de strings.</li>
     </ul>
     <blockquote>
-        Neste documento há apenas uma abresentação breve das funcionalidades do pacote. Para visualizar a documentação oficial com todas as funções e informações adicionais do módulo clique <a href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">aqui</a>.
+        Neste documento há apenas uma abresentação breve das funcionalidades do pacote. Para visualizar a documentação oficial com todas as funções e informações adicionais do módulo clique <a target="_blank" href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">aqui</a>.
     </blockquote>
 </p>
 <p align="center">🔷</p>
