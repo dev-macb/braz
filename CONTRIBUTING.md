@@ -60,7 +60,7 @@
 
 <h2 id="eu-tenho-uma-pergunta">🧩 Tenho Uma Pergunta</h2>
 <p>
-    Se você deseja fazer uma pergunta, assumimos que você leu a <a target="_blank" href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">documentação</a> disponível. Antes de fazer sua pergunta, consulte as <a href="https://github.com/dev-macb/braz/issues">Issues</a> já existentes que possam ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, escreva sua pergunta nesta edição. Também é aconselhável pesquisar na internet respostas primeiro. Se você ainda sentir a necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
+    Se você deseja fazer uma pergunta, assumimos que você leu a <a href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">documentação</a> disponível. Antes de fazer sua pergunta, consulte as <a href="https://github.com/dev-macb/braz/issues">Issues</a> já existentes que possam ajudá-lo. Caso você tenha encontrado um problema adequado e ainda precise de esclarecimentos, escreva sua pergunta nesta edição. Também é aconselhável pesquisar na internet respostas primeiro. Se você ainda sentir a necessidade de fazer uma pergunta e precisar de esclarecimentos, recomendamos o seguinte:
     <ul>
         <li>Abra uma <a href="https://github.com/dev-macb/braz/issues/new">Issue</a>.</li>
         <li>Forneça o máximo de contexto possível sobre o que está acontecendo.</li>
@@ -103,18 +103,20 @@
 
 <h3 id="sugerindo-melhorias">💡 Sugerindo melhorias</h3>
 <p> 
-    Esta seção orienta você no envio de uma sugestão de aprimoramento para CONTRIBUTING.md, **incluindo recursos completamente novos e pequenas melhorias nas funcionalidades existentes**. Seguir essas diretrizes ajudará os mantenedores e a comunidade a entender sua sugestão e encontrar sugestões relacionadas.
-    - Certifique-se de estar usando a versão mais recente.
-    - Leia a [documentação]() com atenção e descubra se a funcionalidade já está coberta, talvez por uma configuração individual.
-    - Faça uma [pesquisa](/problemas) para ver se o aprimoramento já foi sugerido. Se tiver, adicione um comentário ao problema existente em vez de abrir um novo.
-    - Descubra se a sua ideia se encaixa no escopo e objetivos do projeto. Cabe a você fazer um argumento forte para convencer os desenvolvedores do projeto dos méritos desse recurso. Tenha em mente que queremos recursos que sejam úteis para a maioria de nossos usuários e não apenas para um pequeno subconjunto. Se você estiver segmentando apenas uma minoria de usuários, considere escrever uma biblioteca de complementos/plug-ins.
-    As sugestões de aprimoramento são rastreadas como [problemas do GitHub](/issues).
-    - Use um **título claro e descritivo** para o problema para identificar a sugestão.
-    - Forneça uma **descrição passo a passo do aprimoramento sugerido** com o máximo de detalhes possível.
-    - **Descreva o comportamento atual** e **explique qual comportamento você esperava ver** e por quê. Neste ponto, você também pode dizer quais alternativas não funcionam para você.
-    - Você pode **incluir capturas de tela e GIFs animados** que ajudam a demonstrar as etapas ou apontar a parte à qual a sugestão está relacionada. Você pode usar [esta ferramenta](https://www.cockos.com/licecap/) para gravar GIFs no macOS e Windows, e [esta ferramenta](https://github.com/colinkeenan/silentcast) ou [este ferramenta](https://github.com/GNOME/byzanz) no Linux.
-    - **Explique por que esse aprimoramento seria útil** para a maioria dos usuários do CONTRIBUTING.md. Você também pode indicar outros projetos que o resolveram melhor e que podem servir de inspiração.
+    Esta secção orienta você no envio de uma sugestão para <code>CONTRIBUTING</code>, incluindo recursos compleramente novos e pequenas melhorias nas funcionalidades existentes. Seguir essas diretrizes ajudará os mantedores e a comunidade a entender sua sugestão e encontrar sugestões relacionadas.
+    <ul>
+        <li>Certifique-se de estar usando a versão mais recente.</li>
+        <li>Leia a <a href="https://braz.readthedocs.io/pt_BR/latest/?badge=latest">documentação</a> com atenção e descubra se a funcionalidade já está coberta, talvez por uma configuração individual.</li>
+        <li>Faça uma <a href="https://github.com/dev-macb/braz/issues">pesquisa</a> para ver se o aprimoramento já foi sugerido. Se tiver, adicione um comentário ao problema existente em vez de abrir um novo.</li>
+        <li>Descubra se a sua ideia se encaixa no escopo e objetivos do projeto. Cabe a você fazer um argumento forte para convencer os desenvolvedores do projeto dos méritos desse recurso. Tenha em mente que queremos recursos que sejam úteis para a maioria de nossos usuários e não apenas para um pequeno subconjunto. Se você estiver segmentando apenas uma minoria de usuários, considere escrever uma biblioteca de complementos/plug-ins. As sugestões de aprimoramento são rastreadas como <a href="https://github.com/dev-macb/braz/issues">problemas do Github</a>.</li>
+        <li>Use um <strong>título claro e descritivo</strong> para o problema para identificar a sugestão.</li>
+        <li>Forneça uma <strong>descrição passo a passo do aprimoramento sugerido</strong> com o máximo de detalhes possível.</li>
+        <li><strong>Descreva o comportamento atual</strong> e <strong>explique qual comportamento você esperava ver</strong> e por quê. Neste ponto, você também pode dizer quais alternativas não funcionam para você.</li>
+        <li>Você pode <strong>incluir capturas de tela e GIFs animados</strong> que ajudam a demonstrar as etapas ou apontar a parte à qual a sugestão está relacionada. Você pode usar o <a href="https://www.cockos.com/licecap/">LICEcap</a> para gravar GIFs no macOS e Windows, e o <a href="https://github.com/colinkeenan/silentcast">Silentcast</a> no Linux.</li>
+        <li><strong>Explique por que esse aprimoramento seria útil</strong> para a maioria dos usuários do <code>CONTRIBUTING</code>. Você também pode indicar outros projetos que o resolveram melhor e que podem servir de inspiração.</li>
+    </ul>
 </p>
+
 
 <h3 id="outras-formas">❓ Outras Formas</h3>
 <p id="txt-código-conduta" >
