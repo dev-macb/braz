@@ -9,3 +9,5 @@
 
 def ie(mascara: bool = True) -> str: 
     pass
+
+# cada estado tem sua geração própria

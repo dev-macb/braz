@@ -9,5 +9,7 @@ import random
 
 
 def rg(mascara: bool = True) -> str: 
-    rg = [random.randint(0, 9) for _ in range(9)]
+    rg = [random.randint(0, 9) for _ in range(8)]
     return '%s%s.%s%s%s.%s%s%s-%s' % tuple(rg) if mascara else '%s%s%s%s%s%s%s%s%s' % tuple(rg)
+
+# Cada estado tem sua própria regra
