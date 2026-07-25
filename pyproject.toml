@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "braz"
-version = "1.0.0"
+version = "1.0.1"
 description = "Biblioteca e CLI para geracao, validacao, manipulacao e transformacao de dados"
 readme = "README.md"
 license = { text = "MIT" }
