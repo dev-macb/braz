@@ -157,6 +157,21 @@ def _handle_gerar(args: argparse.Namespace) -> None:
         titulo,
         uuid,
     )
+    from braz.shared import formatters
+
+    labels = {
+        "cpf": "CPF",
+        "cnpj": "CNPJ",
+        "rg": "RG",
+        "cnh": "CNH",
+        "pis": "PIS",
+        "titulo": "Titulo",
+        "renavam": "RENAVAM",
+        "cep": "CEP",
+        "telefone": "Telefone",
+        "placa": "Placa",
+        "uuid": "UUID",
+    }
 
     mapping = {
         "cpf": cpf.cpf,
@@ -174,12 +189,17 @@ def _handle_gerar(args: argparse.Namespace) -> None:
 
     for key, fn in mapping.items():
         if getattr(args, key, False):
-            print(fn())
+            valor = fn()
+            fmt = getattr(formatters, key, None)
+            if fmt:
+                valor = fmt(valor)
+            print(f"{labels[key]}: {valor}")
             return
 
     if args.senha is not None:
         length = args.senha if isinstance(args.senha, int) else 16
-        print(senha.senha(length))
+        valor = senha.senha(length)
+        print(f"Senha: {valor}")
         return
 
     print("Use: braz gerar --cpf (ou --cnpj, --rg, ...)", file=sys.stderr)
