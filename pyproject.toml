@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "braz"
-version = "1.0.0"
+version = "1.0.1"
 description = "Biblioteca e CLI para geracao, validacao, manipulacao e transformacao de dados"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.12"
 authors = [
-  { name = "macb" },
+  { name = "dev-macb" },
 ]
 dependencies = [
   "bcrypt>=4.0.0",
@@ -23,8 +23,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/macb/braz"
-Repository = "https://github.com/macb/braz"
+Homepage = "https://github.com/dev-macb/braz"
+Repository = "https://github.com/dev-macb/braz"
 
 [tool.hatch.envs.default]
 features = ["dev"]

@@ -169,4 +169,4 @@ ruff format src/ tests/
 
 ## Licenca
 
-MIT 
+MIT
