@@ -1,4 +1,4 @@
-def encrypt(texto: str, chave: str) -> str:
+def cifrar(texto: str, chave: str) -> str:
     """Aplica cifra XOR usando uma chave.
 
     Args:
@@ -8,12 +8,12 @@ def encrypt(texto: str, chave: str) -> str:
     Returns:
         str: Texto cifrado.
     """
-    chars = []
+    caracteres = []
     for i, c in enumerate(texto):
-        chars.append(chr(ord(c) ^ ord(chave[i % len(chave)])))
-    return "".join(chars)
+        caracteres.append(chr(ord(c) ^ ord(chave[i % len(chave)])))
+    return "".join(caracteres)
 
 
-def decrypt(texto: str, chave: str) -> str:
+def decifrar(texto: str, chave: str) -> str:
     """Decifra XOR (mesma operacao da cifragem)."""
-    return encrypt(texto, chave)
+    return cifrar(texto, chave)

@@ -1,6 +1,6 @@
 import re
 
-from braz.shared.helpers import only_digits
+from braz.shared.helpers import apenas_digitos
 
 
 def telefone(numero: str) -> bool:
@@ -12,7 +12,7 @@ def telefone(numero: str) -> bool:
     Returns:
         bool: True se valido, False caso contrario.
     """
-    digits = only_digits(numero)
-    if len(digits) not in (10, 11):
+    digitos = apenas_digitos(numero)
+    if len(digitos) not in (10, 11):
         return False
-    return bool(re.fullmatch(r"\d{10,11}", digits))
+    return bool(re.fullmatch(r"\d{10,11}", digitos))

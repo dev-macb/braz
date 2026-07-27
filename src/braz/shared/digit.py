@@ -1,8 +1,8 @@
-def compute_check_digit(base: list[int], weights: list[int]) -> int:
+def calcular_digito_verificador(base: list[int], pesos: list[int]) -> int:
     """Calcula um digito verificador usando soma ponderada modulo 11."""
-    total = sum(d * w for d, w in zip(base, weights))
-    remainder = total % 11
-    return 0 if remainder < 2 else 11 - remainder
+    total = sum(d * p for d, p in zip(base, pesos))
+    resto = total % 11
+    return 0 if resto < 2 else 11 - resto
 
 
 CPF_WEIGHTS_1 = list(range(10, 1, -1))

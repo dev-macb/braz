@@ -1,9 +1,9 @@
-def encrypt(texto: str) -> str:
+def cifrar(texto: str) -> str:
     """Converte texto para representacao binaria (8 bits por caractere)."""
     return " ".join(format(ord(c), "08b") for c in texto)
 
 
-def decrypt(binario: str) -> str:
+def decifrar(binario: str) -> str:
     """Converte representacao binaria de volta para texto.
 
     Args:
@@ -12,5 +12,5 @@ def decrypt(binario: str) -> str:
     Returns:
         str: Texto decodificado.
     """
-    chars = [chr(int(b, 2)) for b in binario.split()]
-    return "".join(chars)
+    caracteres = [chr(int(b, 2)) for b in binario.split()]
+    return "".join(caracteres)

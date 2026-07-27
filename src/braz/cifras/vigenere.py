@@ -1,21 +1,21 @@
-def _vigenere(texto: str, chave: str, direction: int) -> str:
-    result = []
-    key_idx = 0
+def _vigenere(texto: str, chave: str, direcao: int) -> str:
+    resultado = []
+    indice_chave = 0
     for c in texto:
         if "A" <= c <= "Z":
-            shift = ord(chave[key_idx % len(chave)].upper()) - 65
-            result.append(chr((ord(c) - 65 + shift * direction) % 26 + 65))
-            key_idx += 1
+            deslocamento = ord(chave[indice_chave % len(chave)].upper()) - 65
+            resultado.append(chr((ord(c) - 65 + deslocamento * direcao) % 26 + 65))
+            indice_chave += 1
         elif "a" <= c <= "z":
-            shift = ord(chave[key_idx % len(chave)].upper()) - 65
-            result.append(chr((ord(c) - 97 + shift * direction) % 26 + 97))
-            key_idx += 1
+            deslocamento = ord(chave[indice_chave % len(chave)].upper()) - 65
+            resultado.append(chr((ord(c) - 97 + deslocamento * direcao) % 26 + 97))
+            indice_chave += 1
         else:
-            result.append(c)
-    return "".join(result)
+            resultado.append(c)
+    return "".join(resultado)
 
 
-def encrypt(texto: str, chave: str) -> str:
+def cifrar(texto: str, chave: str) -> str:
     """Aplica a cifra de Vigenere.
 
     Args:
@@ -28,7 +28,7 @@ def encrypt(texto: str, chave: str) -> str:
     return _vigenere(texto, chave, 1)
 
 
-def decrypt(texto: str, chave: str) -> str:
+def decifrar(texto: str, chave: str) -> str:
     """Decifra um texto cifrado com Vigenere.
 
     Args:

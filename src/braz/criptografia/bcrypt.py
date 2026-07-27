@@ -13,14 +13,14 @@ def bcrypt(texto: str) -> str:
     return _bcrypt.hashpw(texto.encode(), _bcrypt.gensalt()).decode()
 
 
-def bcrypt_check(texto: str, hash_str: str) -> bool:
+def verificar_bcrypt(texto: str, texto_hash: str) -> bool:
     """Verifica se um texto corresponde a um hash bcrypt.
 
     Args:
         texto: Texto a verificar.
-        hash_str: Hash bcrypt armazenado.
+        texto_hash: Hash bcrypt armazenado.
 
     Returns:
         bool: True se corresponder, False caso contrario.
     """
-    return _bcrypt.checkpw(texto.encode(), hash_str.encode())
+    return _bcrypt.checkpw(texto.encode(), texto_hash.encode())

@@ -1,3 +1,5 @@
+import re
+
 from braz.gerar import cpf as gerar_cpf
 from braz.validar import cpf as validar_cpf
 
@@ -6,6 +8,16 @@ def test_gerar_cpf():
     numero = gerar_cpf.cpf()
     assert len(numero) == 11
     assert numero.isdigit()
+
+
+def test_gerar_cpf_sem_formato():
+    numero = gerar_cpf.cpf(formatar=False)
+    assert re.fullmatch(r"\d{11}", numero)
+
+
+def test_gerar_cpf_formatado():
+    numero = gerar_cpf.cpf(formatar=True)
+    assert re.fullmatch(r"\d{3}\.\d{3}\.\d{3}-\d{2}", numero)
 
 
 def test_gerar_cpf_valido():

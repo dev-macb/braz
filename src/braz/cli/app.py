@@ -7,10 +7,14 @@ def main() -> None:
         prog="braz",
         description="CLI para geracao, validacao e transformacao de dados",
     )
-    subparsers = parser.add_subparsers(dest="module")
+    parser.add_argument(
+        "-v", "--versao", action="store_true", help="Exibe a versao da CLI"
+    )
+    subanalisadores = parser.add_subparsers(dest="modulo")
 
     # gerar
-    p = subparsers.add_parser("gerar", help="Gera dados validos")
+    p = subanalisadores.add_parser("gerar", help="Gera dados validos")
+    p.add_argument("-f", "--formatar", action="store_true", help="Exibe formatado")
     p.add_argument("--cpf", action="store_true", help="Gera CPF")
     p.add_argument("--cnpj", action="store_true", help="Gera CNPJ")
     p.add_argument("--rg", action="store_true", help="Gera RG")
@@ -27,16 +31,19 @@ def main() -> None:
     )
 
     # validar
-    p = subparsers.add_parser("validar", help="Valida informacoes")
-    for doc in ["cpf", "cnpj", "rg", "cnh", "pis", "cep", "email", "telefone"]:
+    p = subanalisadores.add_parser("validar", help="Valida informacoes")
+    for documento in ["cpf", "cnpj", "rg", "cnh", "pis", "cep", "email", "telefone"]:
         p.add_argument(
-            f"--{doc}", nargs=1, metavar="VALOR", help=f"Valida {doc.upper()}"
+            f"--{documento}",
+            nargs=1,
+            metavar="VALOR",
+            help=f"Valida {documento.upper()}",
         )
 
     # cifrar
-    p = subparsers.add_parser("cifrar", help="Cifra textos (cifras classicas)")
+    p = subanalisadores.add_parser("cifrar", help="Cifra textos (cifras classicas)")
     p.add_argument(
-        "--cesar", nargs=2, metavar=("SHIFT", "TEXTO"), help="Cifra de Cesar"
+        "--cesar", nargs=2, metavar=("DESLOCAMENTO", "TEXTO"), help="Cifra de Cesar"
     )
     p.add_argument("--rot13", nargs=1, metavar="TEXTO", help="ROT13")
     p.add_argument("--binario", nargs=1, metavar="TEXTO", help="Codifica em binario")
@@ -48,8 +55,13 @@ def main() -> None:
     p.add_argument("--xor", nargs=2, metavar=("CHAVE", "TEXTO"), help="Cifra XOR")
 
     # decifrar
-    p = subparsers.add_parser("decifrar", help="Decifra textos (cifras classicas)")
-    p.add_argument("--cesar", nargs=2, metavar=("SHIFT", "TEXTO"), help="Decifra Cesar")
+    p = subanalisadores.add_parser("decifrar", help="Decifra textos (cifras classicas)")
+    p.add_argument(
+        "--cesar",
+        nargs=2,
+        metavar=("DESLOCAMENTO", "TEXTO"),
+        help="Decifra Cesar",
+    )
     p.add_argument("--rot13", nargs=1, metavar="TEXTO", help="ROT13")
     p.add_argument("--binario", nargs=1, metavar="TEXTO", help="Decodifica binario")
     p.add_argument("--morse", nargs=1, metavar="TEXTO", help="Decodifica Morse")
@@ -60,8 +72,8 @@ def main() -> None:
     p.add_argument("--xor", nargs=2, metavar=("CHAVE", "TEXTO"), help="Decifra XOR")
 
     # criptar
-    p = subparsers.add_parser("criptar", help="Aplica hash ou codificacao")
-    for algo in [
+    p = subanalisadores.add_parser("criptar", help="Aplica hash ou codificacao")
+    for algoritmo in [
         "md5",
         "sha1",
         "sha224",
@@ -72,7 +84,7 @@ def main() -> None:
         "blake2",
     ]:
         p.add_argument(
-            f"--{algo}", nargs=1, metavar="TEXTO", help=f"Hash {algo.upper()}"
+            f"--{algoritmo}", nargs=1, metavar="TEXTO", help=f"Hash {algoritmo.upper()}"
         )
     p.add_argument("--bcrypt", nargs=1, metavar="TEXTO", help="Hash bcrypt")
     p.add_argument("--base64", nargs=1, metavar="TEXTO", help="Codifica Base64")
@@ -80,55 +92,67 @@ def main() -> None:
     p.add_argument("--hex", nargs=1, metavar="TEXTO", help="Codifica hexadecimal")
 
     # decriptar
-    p = subparsers.add_parser("decriptar", help="Decodifica textos")
+    p = subanalisadores.add_parser("decriptar", help="Decodifica textos")
     p.add_argument("--base64", nargs=1, metavar="TEXTO", help="Decodifica Base64")
     p.add_argument("--url", nargs=1, metavar="TEXTO", help="Decodifica URL")
     p.add_argument("--hex", nargs=1, metavar="TEXTO", help="Decodifica hexadecimal")
 
     # manipular
-    p = subparsers.add_parser("manipular", help="Manipula strings")
-    for op in [
-        "upper",
-        "lower",
-        "title",
-        "capitalize",
+    p = subanalisadores.add_parser("manipular", help="Manipula strings")
+    for operacao in [
+        "maiusculo",
+        "minusculo",
+        "titulo",
+        "capitalizar",
         "camel-case",
         "pascal-case",
         "snake-case",
         "kebab-case",
-        "remove-accents",
-        "remove-spaces",
-        "remove-special-chars",
-        "only-digits",
-        "only-letters",
-        "slug",
-        "reverse",
-        "count-chars",
-        "count-words",
+        "remover-acentos",
+        "remover-espacos",
+        "remover-especiais",
+        "apenas-digitos",
+        "apenas-letras",
+        "slugificar",
+        "inverter",
+        "contar-caracteres",
+        "contar-palavras",
     ]:
-        p.add_argument(f"--{op}", nargs=1, metavar="TEXTO", help=op.replace("-", " "))
+        ajuda = operacao.replace("-", " ")
+        if operacao in ("camel-case", "pascal-case", "snake-case", "kebab-case"):
+            ajuda = operacao
+        p.add_argument(f"--{operacao}", nargs=1, metavar="TEXTO", help=ajuda)
     p.add_argument(
-        "--truncate", nargs=2, metavar=("LENGTH", "TEXTO"), help="Trunca texto"
+        "--truncar", nargs=2, metavar=("COMPRIMENTO", "TEXTO"), help="Trunca texto"
     )
     p.add_argument(
-        "--pad", nargs=3, metavar=("WIDTH", "CHAR", "TEXTO"), help="Centraliza texto"
+        "--centralizar",
+        nargs=3,
+        metavar=("LARGURA", "CARACTERE", "TEXTO"),
+        help="Centraliza texto",
     )
 
-    args = parser.parse_args()
+    argumentos = parser.parse_args()
 
-    if not args.module:
+    if argumentos.versao:
+        from braz import __version__
+
+        print(f"braz v{__version__}")
+        return
+
+    if not argumentos.modulo:
         parser.print_help()
         sys.exit(1)
 
     try:
-        _route(args)
+        _rotear(argumentos)
     except Exception as e:
         print(f"Erro: {e}", file=sys.stderr)
         sys.exit(1)
 
 
-def _route(args: argparse.Namespace) -> None:
-    handler = {
+def _rotear(argumentos: argparse.Namespace) -> None:
+    manipulador = {
         "gerar": _handle_gerar,
         "validar": _handle_validar,
         "cifrar": _handle_cifrar,
@@ -137,12 +161,12 @@ def _route(args: argparse.Namespace) -> None:
         "decriptar": _handle_decriptar,
         "manipular": _handle_manipular,
     }
-    fn = handler.get(args.module)
-    if fn:
-        fn(args)
+    funcao = manipulador.get(argumentos.modulo)
+    if funcao:
+        funcao(argumentos)
 
 
-def _handle_gerar(args: argparse.Namespace) -> None:
+def _handle_gerar(argumentos: argparse.Namespace) -> None:
     from braz.gerar import (
         cep,
         cnh,
@@ -158,38 +182,40 @@ def _handle_gerar(args: argparse.Namespace) -> None:
         uuid,
     )
 
-    mapping = {
-        "cpf": cpf.cpf,
-        "cnpj": cnpj.cnpj,
-        "rg": rg.rg,
-        "cnh": cnh.cnh,
-        "pis": pis.pis,
-        "titulo": titulo.titulo,
-        "renavam": renavam.renavam,
-        "cep": cep.cep,
-        "telefone": telefone.telefone,
-        "placa": placa.placa,
-        "uuid": uuid.uuid4,
+    formatar = argumentos.formatar
+
+    mapeamento = {
+        "cpf": ("CPF", cpf.cpf),
+        "cnpj": ("CNPJ", cnpj.cnpj),
+        "rg": ("RG", rg.rg),
+        "cnh": ("CNH", cnh.cnh),
+        "pis": ("PIS", pis.pis),
+        "titulo": ("Titulo", titulo.titulo),
+        "renavam": ("RENAVAM", renavam.renavam),
+        "cep": ("CEP", cep.cep),
+        "telefone": ("Telefone", telefone.telefone),
+        "placa": ("Placa", placa.placa),
+        "uuid": ("UUID", uuid.uuid4),
     }
 
-    for key, fn in mapping.items():
-        if getattr(args, key, False):
-            print(fn())
+    for chave, (rotulo, funcao) in mapeamento.items():
+        if getattr(argumentos, chave, False):
+            print(f"{rotulo}: {funcao(formatar=formatar)}")
             return
 
-    if args.senha is not None:
-        length = args.senha if isinstance(args.senha, int) else 16
-        print(senha.senha(length))
+    if argumentos.senha is not None:
+        comprimento = argumentos.senha if isinstance(argumentos.senha, int) else 16
+        print(f"Senha: {senha.senha(comprimento, formatar=formatar)}")
         return
 
     print("Use: braz gerar --cpf (ou --cnpj, --rg, ...)", file=sys.stderr)
     sys.exit(1)
 
 
-def _handle_validar(args: argparse.Namespace) -> None:
+def _handle_validar(argumentos: argparse.Namespace) -> None:
     from braz.validar import cep, cnh, cnpj, cpf, email, pis, rg, telefone
 
-    for doc, fn in [
+    for documento, funcao in [
         ("cpf", cpf.cpf),
         ("cnpj", cnpj.cnpj),
         ("rg", rg.rg),
@@ -199,67 +225,67 @@ def _handle_validar(args: argparse.Namespace) -> None:
         ("email", email.email),
         ("telefone", telefone.telefone),
     ]:
-        val = getattr(args, doc, None)
-        if val:
-            result = fn(val[0])
-            print("Valido" if result else "Invalido")
+        valor = getattr(argumentos, documento, None)
+        if valor:
+            resultado = funcao(valor[0])
+            print("Valido" if resultado else "Invalido")
             return
 
     print("Use: braz validar --cpf 52998224725", file=sys.stderr)
     sys.exit(1)
 
 
-def _handle_cifrar(args: argparse.Namespace) -> None:
+def _handle_cifrar(argumentos: argparse.Namespace) -> None:
     from braz.cifras import atbash, binario, cesar, morse, rot13, vigenere, xor
 
-    if args.cesar:
-        shift, texto = int(args.cesar[0]), args.cesar[1]
-        print(cesar.encrypt(texto, shift))
-    elif args.rot13:
-        print(rot13.encrypt(args.rot13[0]))
-    elif args.binario:
-        print(binario.encrypt(args.binario[0]))
-    elif args.morse:
-        print(morse.encrypt(args.morse[0]))
-    elif args.vigenere:
-        chave, texto = args.vigenere[0], args.vigenere[1]
-        print(vigenere.encrypt(texto, chave))
-    elif args.atbash:
-        print(atbash.encrypt(args.atbash[0]))
-    elif args.xor:
-        chave, texto = args.xor[0], args.xor[1]
-        print(xor.encrypt(texto, chave))
+    if argumentos.cesar:
+        deslocamento, texto = int(argumentos.cesar[0]), argumentos.cesar[1]
+        print(cesar.cifrar(texto, deslocamento))
+    elif argumentos.rot13:
+        print(rot13.cifrar(argumentos.rot13[0]))
+    elif argumentos.binario:
+        print(binario.cifrar(argumentos.binario[0]))
+    elif argumentos.morse:
+        print(morse.cifrar(argumentos.morse[0]))
+    elif argumentos.vigenere:
+        chave, texto = argumentos.vigenere[0], argumentos.vigenere[1]
+        print(vigenere.cifrar(texto, chave))
+    elif argumentos.atbash:
+        print(atbash.cifrar(argumentos.atbash[0]))
+    elif argumentos.xor:
+        chave, texto = argumentos.xor[0], argumentos.xor[1]
+        print(xor.cifrar(texto, chave))
     else:
         print("Use: braz cifrar --cesar 5 TEXTO", file=sys.stderr)
         sys.exit(1)
 
 
-def _handle_decifrar(args: argparse.Namespace) -> None:
+def _handle_decifrar(argumentos: argparse.Namespace) -> None:
     from braz.cifras import atbash, binario, cesar, morse, rot13, vigenere, xor
 
-    if args.cesar:
-        shift, texto = int(args.cesar[0]), args.cesar[1]
-        print(cesar.decrypt(texto, shift))
-    elif args.rot13:
-        print(rot13.decrypt(args.rot13[0]))
-    elif args.binario:
-        print(binario.decrypt(args.binario[0]))
-    elif args.morse:
-        print(morse.decrypt(args.morse[0]))
-    elif args.vigenere:
-        chave, texto = args.vigenere[0], args.vigenere[1]
-        print(vigenere.decrypt(texto, chave))
-    elif args.atbash:
-        print(atbash.decrypt(args.atbash[0]))
-    elif args.xor:
-        chave, texto = args.xor[0], args.xor[1]
-        print(xor.decrypt(texto, chave))
+    if argumentos.cesar:
+        deslocamento, texto = int(argumentos.cesar[0]), argumentos.cesar[1]
+        print(cesar.decifrar(texto, deslocamento))
+    elif argumentos.rot13:
+        print(rot13.decifrar(argumentos.rot13[0]))
+    elif argumentos.binario:
+        print(binario.decifrar(argumentos.binario[0]))
+    elif argumentos.morse:
+        print(morse.decifrar(argumentos.morse[0]))
+    elif argumentos.vigenere:
+        chave, texto = argumentos.vigenere[0], argumentos.vigenere[1]
+        print(vigenere.decifrar(texto, chave))
+    elif argumentos.atbash:
+        print(atbash.decifrar(argumentos.atbash[0]))
+    elif argumentos.xor:
+        chave, texto = argumentos.xor[0], argumentos.xor[1]
+        print(xor.decifrar(texto, chave))
     else:
         print("Use: braz decifrar --morse ... --- ...", file=sys.stderr)
         sys.exit(1)
 
 
-def _handle_criptar(args: argparse.Namespace) -> None:
+def _handle_criptar(argumentos: argparse.Namespace) -> None:
     from braz.criptografia import (
         base64,
         bcrypt,
@@ -275,7 +301,7 @@ def _handle_criptar(args: argparse.Namespace) -> None:
         url,
     )
 
-    mapping = {
+    mapeamento = {
         "md5": md5.md5,
         "sha1": sha1.sha1,
         "sha224": sha224.sha224,
@@ -284,77 +310,79 @@ def _handle_criptar(args: argparse.Namespace) -> None:
         "sha512": sha512.sha512,
         "blake2": blake2.blake2b,
         "bcrypt": bcrypt.bcrypt,
-        "base64": base64.encode,
-        "url": url.encode,
-        "hex": hex.encode,
+        "base64": base64.codificar,
+        "url": url.codificar,
+        "hex": hex.codificar,
     }
 
-    for key, fn in mapping.items():
-        val = getattr(args, key, None)
-        if val:
-            print(fn(val[0]))
+    for chave, funcao in mapeamento.items():
+        valor = getattr(argumentos, chave, None)
+        if valor:
+            print(funcao(valor[0]))
             return
 
-    if args.sha3:
-        print(sha3.sha3_256(args.sha3[0]))
+    if argumentos.sha3:
+        print(sha3.sha3_256(argumentos.sha3[0]))
         return
 
     print("Use: braz criptar --sha256 TEXTO", file=sys.stderr)
     sys.exit(1)
 
 
-def _handle_decriptar(args: argparse.Namespace) -> None:
+def _handle_decriptar(argumentos: argparse.Namespace) -> None:
     from braz.criptografia import base64, hex, url
 
-    if args.base64:
-        print(base64.decode(args.base64[0]))
-    elif args.url:
-        print(url.decode(args.url[0]))
-    elif args.hex:
-        print(hex.decode(args.hex[0]))
+    if argumentos.base64:
+        print(base64.decodificar(argumentos.base64[0]))
+    elif argumentos.url:
+        print(url.decodificar(argumentos.url[0]))
+    elif argumentos.hex:
+        print(hex.decodificar(argumentos.hex[0]))
     else:
         print("Use: braz decriptar --base64 SGVsbG8=", file=sys.stderr)
         sys.exit(1)
 
 
-def _handle_manipular(args: argparse.Namespace) -> None:
+def _handle_manipular(argumentos: argparse.Namespace) -> None:
     from braz.strings import case, clean, utils
 
-    mapping = {
-        "upper": (case.upper, 1),
-        "lower": (case.lower, 1),
-        "title": (case.title, 1),
-        "capitalize": (case.capitalize, 1),
+    mapeamento = {
+        "maiusculo": (case.upper, 1),
+        "minusculo": (case.lower, 1),
+        "titulo": (case.title, 1),
+        "capitalizar": (case.capitalize, 1),
         "camel_case": (case.camel_case, 1),
         "pascal_case": (case.pascal_case, 1),
         "snake_case": (case.snake_case, 1),
         "kebab_case": (case.kebab_case, 1),
-        "remove_accents": (clean.remove_accents, 1),
-        "remove_spaces": (clean.remove_spaces, 1),
-        "remove_special_chars": (clean.remove_special_chars, 1),
-        "only_digits": (clean.only_digits, 1),
-        "only_letters": (clean.only_letters, 1),
-        "slug": (utils.slug, 1),
-        "reverse": (utils.reverse, 1),
-        "count_chars": (utils.count_chars, 1),
-        "count_words": (utils.count_words, 1),
+        "remover_acentos": (clean.remove_accents, 1),
+        "remover_espacos": (clean.remove_spaces, 1),
+        "remover_especiais": (clean.remove_special_chars, 1),
+        "apenas_digitos": (clean.apenas_digitos, 1),
+        "apenas_letras": (clean.apenas_letras, 1),
+        "slugificar": (utils.slug, 1),
+        "inverter": (utils.reverse, 1),
+        "contar_caracteres": (utils.count_chars, 1),
+        "contar_palavras": (utils.count_words, 1),
     }
 
-    for key, (fn, _) in mapping.items():
-        val = getattr(args, key, None)
-        if val:
-            print(fn(val[0]))
+    for chave, (funcao, _) in mapeamento.items():
+        valor = getattr(argumentos, chave, None)
+        if valor:
+            print(funcao(valor[0]))
             return
 
-    if args.truncate:
-        length, texto = int(args.truncate[0]), args.truncate[1]
-        print(utils.truncate(texto, length))
+    if argumentos.truncar:
+        comprimento, texto = int(argumentos.truncar[0]), argumentos.truncar[1]
+        print(utils.truncate(texto, comprimento))
         return
 
-    if args.pad:
-        width, char, texto = int(args.pad[0]), args.pad[1], args.pad[2]
-        print(utils.pad(texto, width, char))
+    if argumentos.centralizar:
+        largura = int(argumentos.centralizar[0])
+        caractere = argumentos.centralizar[1]
+        texto = argumentos.centralizar[2]
+        print(utils.pad(texto, largura, caractere))
         return
 
-    print("Use: braz manipular --slug 'Meu Texto'", file=sys.stderr)
+    print("Use: braz manipular --slugificar 'Meu Texto'", file=sys.stderr)
     sys.exit(1)

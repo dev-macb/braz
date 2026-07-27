@@ -37,23 +37,23 @@ _MORSE = {
     "9": "----.",
 }
 
-_REVERSE = {v: k for k, v in _MORSE.items()}
+_REVERSO = {v: k for k, v in _MORSE.items()}
 
 
-def encrypt(texto: str) -> str:
+def cifrar(texto: str) -> str:
     """Converte texto para codigo Morse.
 
     Palavras separadas por " / ".
     """
-    words = texto.upper().split()
-    return " / ".join(" ".join(_MORSE.get(c, c) for c in w) for w in words)
+    palavras = texto.upper().split()
+    return " / ".join(" ".join(_MORSE.get(c, c) for c in w) for w in palavras)
 
 
-def decrypt(morse: str) -> str:
+def decifrar(codigo_morse: str) -> str:
     """Converte codigo Morse de volta para texto."""
-    words = morse.split(" / ")
-    result = []
-    for word in words:
-        chars = word.split()
-        result.append("".join(_REVERSE.get(c, c) for c in chars))
-    return " ".join(result)
+    palavras = codigo_morse.split(" / ")
+    resultado = []
+    for palavra in palavras:
+        caracteres = palavra.split()
+        resultado.append("".join(_REVERSO.get(c, c) for c in caracteres))
+    return " ".join(resultado)

@@ -7,7 +7,12 @@ from braz.gerar import senha, uuid
 
 def test_gerar_uuid_formato():
     uid = uuid.uuid4()
-    # Tenta parsear como UUID v4
+    parsed = _uuid.UUID(uid)
+    assert str(parsed) == uid
+
+
+def test_gerar_uuid_formatado_ignorado():
+    uid = uuid.uuid4(formatar=True)
     parsed = _uuid.UUID(uid)
     assert str(parsed) == uid
 
@@ -27,6 +32,11 @@ def test_gerar_senha_tamanho_personalizado():
 
 def test_gerar_senha_tamanho_0():
     assert senha.senha(0) == ""
+
+
+def test_gerar_senha_formatado_ignorado():
+    pwd = senha.senha(formatar=True)
+    assert all(c in senha.ASCII for c in pwd)
 
 
 def test_gerar_senha_caracteres_validos():

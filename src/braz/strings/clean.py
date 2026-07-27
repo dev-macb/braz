@@ -21,11 +21,11 @@ def remove_special_chars(texto: str) -> str:
     return re.sub(r"[^a-zA-Z0-9\s]", "", texto)
 
 
-def only_digits(texto: str) -> str:
+def apenas_digitos(texto: str) -> str:
     """Mantem apenas os digitos numericos."""
     return re.sub(r"\D", "", texto)
 
 
-def only_letters(texto: str) -> str:
+def apenas_letras(texto: str) -> str:
     """Mantem apenas letras (a-z, A-Z)."""
     return re.sub(r"[^a-zA-Z]", "", texto)

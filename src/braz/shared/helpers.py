@@ -1,11 +1,11 @@
 import re
 
 
-def only_digits(text: str) -> str:
+def apenas_digitos(texto: str) -> str:
     """Remove todos os caracteres nao numericos de uma string."""
-    return re.sub(r"\D", "", text)
+    return re.sub(r"\D", "", texto)
 
 
-def all_same_digit(text: str) -> bool:
+def todos_mesmo_digito(texto: str) -> bool:
     """Verifica se todos os caracteres da string sao iguais."""
-    return len(set(text)) == 1
+    return len(set(texto)) == 1

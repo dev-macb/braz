@@ -1,4 +1,4 @@
-from braz.shared.helpers import all_same_digit
+from braz.shared.helpers import todos_mesmo_digito
 
 
 def _clean_rg(numero: str) -> str:
@@ -14,17 +14,17 @@ def rg(numero: str) -> bool:
     Returns:
         bool: True se valido, False caso contrario.
     """
-    cleaned = _clean_rg(numero)
-    if len(cleaned) != 9:
+    limpo = _clean_rg(numero)
+    if len(limpo) != 9:
         return False
-    if cleaned[-1] == "X" and all_same_digit(cleaned[:-1]):
+    if limpo[-1] == "X" and todos_mesmo_digito(limpo[:-1]):
         return False
-    if cleaned[-1] != "X" and all_same_digit(cleaned):
+    if limpo[-1] != "X" and todos_mesmo_digito(limpo):
         return False
-    nums = [int(d) for d in cleaned[:8] if d.isdigit()]
-    if len(nums) != 8:
+    numeros = [int(d) for d in limpo[:8] if d.isdigit()]
+    if len(numeros) != 8:
         return False
-    total = sum(d * w for d, w in zip(nums, range(2, 10)))
-    remainder = total % 11
-    expected = "X" if remainder == 10 else str(remainder)
-    return cleaned[-1].upper() == expected
+    total = sum(d * w for d, w in zip(numeros, range(2, 10)))
+    resto = total % 11
+    esperado = "X" if resto == 10 else str(resto)
+    return limpo[-1].upper() == esperado

@@ -26,8 +26,8 @@ def camel_case(texto: str) -> str:
 
     Exemplo: "hello world" -> "helloWorld"
     """
-    words = re.split(r"[\s_\-]+", texto)
-    return words[0].lower() + "".join(w.capitalize() for w in words[1:])
+    palavras = re.split(r"[\s_\-]+", texto)
+    return palavras[0].lower() + "".join(w.capitalize() for w in palavras[1:])
 
 
 def pascal_case(texto: str) -> str:
@@ -35,8 +35,8 @@ def pascal_case(texto: str) -> str:
 
     Exemplo: "hello world" -> "HelloWorld"
     """
-    words = re.split(r"[\s_\-]+", texto)
-    return "".join(w.capitalize() for w in words)
+    palavras = re.split(r"[\s_\-]+", texto)
+    return "".join(w.capitalize() for w in palavras)
 
 
 def snake_case(texto: str) -> str:
@@ -44,8 +44,8 @@ def snake_case(texto: str) -> str:
 
     Exemplo: "hello world" -> "hello_world"
     """
-    words = re.split(r"[\s_\-]+", texto)
-    return "_".join(w.lower() for w in words)
+    palavras = re.split(r"[\s_\-]+", texto)
+    return "_".join(w.lower() for w in palavras)
 
 
 def kebab_case(texto: str) -> str:
@@ -53,5 +53,5 @@ def kebab_case(texto: str) -> str:
 
     Exemplo: "hello world" -> "hello-world"
     """
-    words = re.split(r"[\s_\-]+", texto)
-    return "-".join(w.lower() for w in words)
+    palavras = re.split(r"[\s_\-]+", texto)
+    return "-".join(w.lower() for w in palavras)
