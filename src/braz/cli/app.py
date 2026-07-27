@@ -34,7 +34,9 @@ def main() -> None:
     p = subanalisadores.add_parser("validar", help="Valida informacoes")
     for documento in ["cpf", "cnpj", "rg", "cnh", "pis", "cep", "email", "telefone"]:
         p.add_argument(
-            f"--{documento}", nargs=1, metavar="VALOR",
+            f"--{documento}",
+            nargs=1,
+            metavar="VALOR",
             help=f"Valida {documento.upper()}",
         )
 
@@ -55,7 +57,9 @@ def main() -> None:
     # decifrar
     p = subanalisadores.add_parser("decifrar", help="Decifra textos (cifras classicas)")
     p.add_argument(
-        "--cesar", nargs=2, metavar=("DESLOCAMENTO", "TEXTO"),
+        "--cesar",
+        nargs=2,
+        metavar=("DESLOCAMENTO", "TEXTO"),
         help="Decifra Cesar",
     )
     p.add_argument("--rot13", nargs=1, metavar="TEXTO", help="ROT13")
@@ -122,7 +126,9 @@ def main() -> None:
         "--truncar", nargs=2, metavar=("COMPRIMENTO", "TEXTO"), help="Trunca texto"
     )
     p.add_argument(
-        "--centralizar", nargs=3, metavar=("LARGURA", "CARACTERE", "TEXTO"),
+        "--centralizar",
+        nargs=3,
+        metavar=("LARGURA", "CARACTERE", "TEXTO"),
         help="Centraliza texto",
     )
 
@@ -130,6 +136,7 @@ def main() -> None:
 
     if argumentos.versao:
         from braz import __version__
+
         print(f"braz v{__version__}")
         return
 
