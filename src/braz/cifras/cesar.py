@@ -1,36 +1,36 @@
-def _shift(texto: str, shift: int, direction: int) -> str:
-    result = []
+def _deslocamento(texto: str, deslocamento: int, direcao: int) -> str:
+    resultado = []
     for c in texto:
         if "A" <= c <= "Z":
-            result.append(chr((ord(c) - 65 + shift * direction) % 26 + 65))
+            resultado.append(chr((ord(c) - 65 + deslocamento * direcao) % 26 + 65))
         elif "a" <= c <= "z":
-            result.append(chr((ord(c) - 97 + shift * direction) % 26 + 97))
+            resultado.append(chr((ord(c) - 97 + deslocamento * direcao) % 26 + 97))
         else:
-            result.append(c)
-    return "".join(result)
+            resultado.append(c)
+    return "".join(resultado)
 
 
-def encrypt(texto: str, shift: int) -> str:
+def cifrar(texto: str, deslocamento: int) -> str:
     """Aplica a cifra de Cesar em um texto.
 
     Args:
         texto: Texto original.
-        shift: Deslocamento (numero de posicoes).
+        deslocamento: Deslocamento (numero de posicoes).
 
     Returns:
         str: Texto cifrado.
     """
-    return _shift(texto, shift, 1)
+    return _deslocamento(texto, deslocamento, 1)
 
 
-def decrypt(texto: str, shift: int) -> str:
+def decifrar(texto: str, deslocamento: int) -> str:
     """Decifra um texto cifrado com Cesar.
 
     Args:
         texto: Texto cifrado.
-        shift: Deslocamento utilizado na cifragem.
+        deslocamento: Deslocamento utilizado na cifragem.
 
     Returns:
         str: Texto decifrado.
     """
-    return _shift(texto, shift, -1)
+    return _deslocamento(texto, deslocamento, -1)

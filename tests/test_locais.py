@@ -8,8 +8,13 @@ from braz.validar import email as validar_email
 from braz.validar import telefone as validar_telefone
 
 
-def test_gerar_cep_formato():
+def test_gerar_cep_sem_formato():
     numero = cep.cep()
+    assert re.fullmatch(r"\d{8}", numero)
+
+
+def test_gerar_cep_formatado():
+    numero = cep.cep(formatar=True)
     assert re.fullmatch(r"\d{5}-\d{3}", numero)
 
 
@@ -34,8 +39,13 @@ def test_validar_cep_vazio():
     assert not validar_cep.cep("")
 
 
-def test_gerar_telefone():
+def test_gerar_telefone_sem_formato():
     numero = telefone.telefone()
+    assert re.fullmatch(r"\d{10}", numero)
+
+
+def test_gerar_telefone_formatado():
+    numero = telefone.telefone(formatar=True)
     assert "(" in numero and ")" in numero
 
 
@@ -55,8 +65,13 @@ def test_validar_telefone_vazio():
     assert not validar_telefone.telefone("")
 
 
-def test_gerar_placa():
+def test_gerar_placa_sem_formato():
     placa_str = placa.placa()
+    assert re.fullmatch(r"[A-Z]{3}\d{4}", placa_str)
+
+
+def test_gerar_placa_formatado():
+    placa_str = placa.placa(formatar=True)
     assert re.fullmatch(r"[A-Z]{3}-\d{4}", placa_str)
 
 

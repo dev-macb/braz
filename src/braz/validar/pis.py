@@ -1,5 +1,5 @@
-from braz.shared.digit import PIS_WEIGHTS, compute_check_digit
-from braz.shared.helpers import all_same_digit, only_digits
+from braz.shared.digit import PIS_WEIGHTS, calcular_digito_verificador
+from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
 
 
 def pis(numero: str) -> bool:
@@ -11,9 +11,9 @@ def pis(numero: str) -> bool:
     Returns:
         bool: True se valido, False caso contrario.
     """
-    digits = only_digits(numero)
-    if len(digits) != 11 or all_same_digit(digits):
+    digitos = apenas_digitos(numero)
+    if len(digitos) != 11 or todos_mesmo_digito(digitos):
         return False
-    nums = [int(d) for d in digits]
-    d = compute_check_digit(nums[:10], PIS_WEIGHTS)
-    return d == nums[10]
+    numeros = [int(d) for d in digitos]
+    d = calcular_digito_verificador(numeros[:10], PIS_WEIGHTS)
+    return d == numeros[10]

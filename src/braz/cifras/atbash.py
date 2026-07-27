@@ -1,4 +1,4 @@
-def _atbash_char(c: str) -> str:
+def _caractere_atbash(c: str) -> str:
     if "A" <= c <= "Z":
         return chr(90 - (ord(c) - 65))
     if "a" <= c <= "z":
@@ -6,11 +6,11 @@ def _atbash_char(c: str) -> str:
     return c
 
 
-def encrypt(texto: str) -> str:
+def cifrar(texto: str) -> str:
     """Aplica a cifra Atbash (inverte o alfabeto)."""
-    return "".join(_atbash_char(c) for c in texto)
+    return "".join(_caractere_atbash(c) for c in texto)
 
 
-def decrypt(texto: str) -> str:
+def decifrar(texto: str) -> str:
     """Decifra Atbash (mesma operacao da cifragem)."""
-    return encrypt(texto)
+    return cifrar(texto)

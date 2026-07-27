@@ -5,13 +5,14 @@ _rand = SystemRandom()
 ASCII = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*"
 
 
-def senha(length: int = 16) -> str:
+def senha(comprimento: int = 16, formatar: bool = False) -> str:
     """Gera uma senha aleatoria segura.
 
     Args:
-        length: Comprimento da senha (padrao 16).
+        comprimento: Comprimento da senha (padrao 16).
+        formatar: Ignorado (senha nao possui formatacao).
 
     Returns:
         str: Senha aleatoria.
     """
-    return "".join(_rand.choice(ASCII) for _ in range(length))
+    return "".join(_rand.choice(ASCII) for _ in range(comprimento))

@@ -1,3 +1,5 @@
+import re
+
 from braz.gerar import cnpj as gerar_cnpj
 from braz.validar import cnpj as validar_cnpj
 
@@ -6,6 +8,16 @@ def test_gerar_cnpj():
     numero = gerar_cnpj.cnpj()
     assert len(numero) == 14
     assert numero.isdigit()
+
+
+def test_gerar_cnpj_sem_formato():
+    numero = gerar_cnpj.cnpj(formatar=False)
+    assert re.fullmatch(r"\d{14}", numero)
+
+
+def test_gerar_cnpj_formatado():
+    numero = gerar_cnpj.cnpj(formatar=True)
+    assert re.fullmatch(r"\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}", numero)
 
 
 def test_gerar_cnpj_valido():

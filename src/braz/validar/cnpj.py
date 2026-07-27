@@ -1,5 +1,5 @@
-from braz.shared.digit import CNPJ_WEIGHTS_1, CNPJ_WEIGHTS_2, compute_check_digit
-from braz.shared.helpers import all_same_digit, only_digits
+from braz.shared.digit import CNPJ_WEIGHTS_1, CNPJ_WEIGHTS_2, calcular_digito_verificador
+from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
 
 
 def cnpj(numero: str) -> bool:
@@ -11,12 +11,12 @@ def cnpj(numero: str) -> bool:
     Returns:
         bool: True se valido, False caso contrario.
     """
-    digits = only_digits(numero)
-    if len(digits) != 14 or all_same_digit(digits):
+    digitos = apenas_digitos(numero)
+    if len(digitos) != 14 or todos_mesmo_digito(digitos):
         return False
-    nums = [int(d) for d in digits]
-    d1 = compute_check_digit(nums[:12], CNPJ_WEIGHTS_1)
-    if d1 != nums[12]:
+    numeros = [int(d) for d in digitos]
+    d1 = calcular_digito_verificador(numeros[:12], CNPJ_WEIGHTS_1)
+    if d1 != numeros[12]:
         return False
-    d2 = compute_check_digit(nums[:13], CNPJ_WEIGHTS_2)
-    return d2 == nums[13]
+    d2 = calcular_digito_verificador(numeros[:13], CNPJ_WEIGHTS_2)
+    return d2 == numeros[13]

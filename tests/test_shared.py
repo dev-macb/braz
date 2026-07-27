@@ -1,40 +1,40 @@
-from braz.shared.digit import compute_check_digit
-from braz.shared.helpers import all_same_digit, only_digits
+from braz.shared.digit import calcular_digito_verificador
+from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
 
 
-def test_only_digits():
-    assert only_digits("abc123def456") == "123456"
+def test_apenas_digitos():
+    assert apenas_digitos("abc123def456") == "123456"
 
 
-def test_only_digits_vazio():
-    assert only_digits("") == ""
+def test_apenas_digitos_vazio():
+    assert apenas_digitos("") == ""
 
 
-def test_only_digits_sem_numeros():
-    assert only_digits("abc") == ""
+def test_apenas_digitos_sem_numeros():
+    assert apenas_digitos("abc") == ""
 
 
-def test_all_same_digit_true():
-    assert all_same_digit("11111")
+def test_todos_mesmo_digito_verdadeiro():
+    assert todos_mesmo_digito("11111")
 
 
-def test_all_same_digit_false():
-    assert not all_same_digit("12345")
+def test_todos_mesmo_digito_falso():
+    assert not todos_mesmo_digito("12345")
 
 
-def test_all_same_digit_vazio():
-    assert not all_same_digit("")
+def test_todos_mesmo_digito_vazio():
+    assert not todos_mesmo_digito("")
 
 
-def test_compute_check_digit():
+def test_calcular_digito_verificador():
     base = [0, 1, 1, 2, 3, 4, 5, 6, 7]
-    weights = list(range(10, 1, -1))
-    result = compute_check_digit(base, weights)
-    assert isinstance(result, int)
-    assert 0 <= result <= 9
+    pesos = list(range(10, 1, -1))
+    resultado = calcular_digito_verificador(base, pesos)
+    assert isinstance(resultado, int)
+    assert 0 <= resultado <= 9
 
 
-def test_compute_check_digit_resto_0():
+def test_calcular_digito_verificador_resto_0():
     base = [0, 0, 0, 0, 0, 0, 0, 0, 0]
-    weights = list(range(10, 1, -1))
-    assert compute_check_digit(base, weights) == 0
+    pesos = list(range(10, 1, -1))
+    assert calcular_digito_verificador(base, pesos) == 0

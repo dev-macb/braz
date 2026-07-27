@@ -8,9 +8,9 @@ def test_bcrypt_gera_hash():
 
 def test_bcrypt_check_valido():
     hashed = bcrypt.bcrypt("senha123")
-    assert bcrypt.bcrypt_check("senha123", hashed)
+    assert bcrypt.verificar_bcrypt("senha123", hashed)
 
 
 def test_bcrypt_check_invalido():
     hashed = bcrypt.bcrypt("senha123")
-    assert not bcrypt.bcrypt_check("outra", hashed)
+    assert not bcrypt.verificar_bcrypt("outra", hashed)
