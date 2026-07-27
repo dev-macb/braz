@@ -1,10 +1,8 @@
 """Testes para a interface de linha de comando (CLI)."""
 
 import io
-import sys
 import re
-
-import pytest
+import sys
 
 from braz import __version__
 

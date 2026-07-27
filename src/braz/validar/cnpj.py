@@ -1,5 +1,9 @@
-from braz.shared.digit import CNPJ_WEIGHTS_1, CNPJ_WEIGHTS_2, calcular_digito_verificador
-from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
+from braz.shared.digit import (
+    CNPJ_WEIGHTS_1,
+    CNPJ_WEIGHTS_2,
+    calcular_digito_verificador,
+)
+from braz.shared.helpers import apenas_digitos, todos_mesmo_digito
 
 
 def cnpj(numero: str) -> bool:

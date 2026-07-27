@@ -14,7 +14,7 @@ def main() -> None:
 
     # gerar
     p = subanalisadores.add_parser("gerar", help="Gera dados validos")
-    p.add_argument("-f", "--formatar", action="store_true", help="Exibe dados formatados")
+    p.add_argument("-f", "--formatar", action="store_true", help="Exibe formatado")
     p.add_argument("--cpf", action="store_true", help="Gera CPF")
     p.add_argument("--cnpj", action="store_true", help="Gera CNPJ")
     p.add_argument("--rg", action="store_true", help="Gera RG")
@@ -34,7 +34,8 @@ def main() -> None:
     p = subanalisadores.add_parser("validar", help="Valida informacoes")
     for documento in ["cpf", "cnpj", "rg", "cnh", "pis", "cep", "email", "telefone"]:
         p.add_argument(
-            f"--{documento}", nargs=1, metavar="VALOR", help=f"Valida {documento.upper()}"
+            f"--{documento}", nargs=1, metavar="VALOR",
+            help=f"Valida {documento.upper()}",
         )
 
     # cifrar
@@ -53,7 +54,10 @@ def main() -> None:
 
     # decifrar
     p = subanalisadores.add_parser("decifrar", help="Decifra textos (cifras classicas)")
-    p.add_argument("--cesar", nargs=2, metavar=("DESLOCAMENTO", "TEXTO"), help="Decifra Cesar")
+    p.add_argument(
+        "--cesar", nargs=2, metavar=("DESLOCAMENTO", "TEXTO"),
+        help="Decifra Cesar",
+    )
     p.add_argument("--rot13", nargs=1, metavar="TEXTO", help="ROT13")
     p.add_argument("--binario", nargs=1, metavar="TEXTO", help="Decodifica binario")
     p.add_argument("--morse", nargs=1, metavar="TEXTO", help="Decodifica Morse")
@@ -118,7 +122,8 @@ def main() -> None:
         "--truncar", nargs=2, metavar=("COMPRIMENTO", "TEXTO"), help="Trunca texto"
     )
     p.add_argument(
-        "--centralizar", nargs=3, metavar=("LARGURA", "CARACTERE", "TEXTO"), help="Centraliza texto"
+        "--centralizar", nargs=3, metavar=("LARGURA", "CARACTERE", "TEXTO"),
+        help="Centraliza texto",
     )
 
     argumentos = parser.parse_args()
@@ -366,7 +371,9 @@ def _handle_manipular(argumentos: argparse.Namespace) -> None:
         return
 
     if argumentos.centralizar:
-        largura, caractere, texto = int(argumentos.centralizar[0]), argumentos.centralizar[1], argumentos.centralizar[2]
+        largura = int(argumentos.centralizar[0])
+        caractere = argumentos.centralizar[1]
+        texto = argumentos.centralizar[2]
         print(utils.pad(texto, largura, caractere))
         return
 

@@ -1,6 +1,10 @@
 from secrets import SystemRandom
 
-from braz.shared.digit import CNPJ_WEIGHTS_1, CNPJ_WEIGHTS_2, calcular_digito_verificador
+from braz.shared.digit import (
+    CNPJ_WEIGHTS_1,
+    CNPJ_WEIGHTS_2,
+    calcular_digito_verificador,
+)
 
 _rand = SystemRandom()
 

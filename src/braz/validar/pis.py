@@ -1,5 +1,5 @@
 from braz.shared.digit import PIS_WEIGHTS, calcular_digito_verificador
-from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
+from braz.shared.helpers import apenas_digitos, todos_mesmo_digito
 
 
 def pis(numero: str) -> bool:

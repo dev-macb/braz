@@ -1,5 +1,5 @@
 from braz.shared.digit import CPF_WEIGHTS_1, CPF_WEIGHTS_2, calcular_digito_verificador
-from braz.shared.helpers import todos_mesmo_digito, apenas_digitos
+from braz.shared.helpers import apenas_digitos, todos_mesmo_digito
 
 
 def cpf(numero: str) -> bool:
